@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light/Dark</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<link id="mystylesheet" rel="stylesheet" type="text/css" href="light.css">
+
+</head>
+<body>
+
+	<div id="box">
+		<img id="profile_pic" src="images/dennis.jpg">
+		<h2>Hi, Im Dennis!</h2>
+		<p>I love coding, doing research and sharing what I learn with others :)</p>
+		<hr>
+		<button class="btn btn-light" onclick="swapStyle('light.css')">Light Mode</button>
+		<button class="btn btn-dark" onclick="swapStyle('dark.css')">Dark Mode</button>
+	</div>
+
+	
+
+	
+
+	<script type="text/javascript">
+
+		var setTheme = localStorage.getItem('theme')
+		console.log('theme:', setTheme)
+
+		if (setTheme == null){
+			swapStyle('light.css')
+		}else{
+			swapStyle(setTheme)
+		}
+
+		function swapStyle(sheet){
+			document.getElementById('mystylesheet').href = sheet
+			localStorage.setItem('theme', sheet)
+		}
+
+
+		/*
+		var setTheme = localStorage.getItem('theme')
+		if (setTheme == null){
+			swapStyles('light.css')
+		}else{
+			swapStyles(setTheme)
+		}
+			
+		
+		function swapStyles(sheet){
+			document.getElementById('mystylesheet').href = sheet
+			localStorage.setItem('theme', sheet)
+		}
+		*/
+		
+	</script>
+</body>
+</html>
